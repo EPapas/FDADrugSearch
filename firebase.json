@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "drugsearch234",
     "public": "build",
     "ignore": [
       "firebase.json",

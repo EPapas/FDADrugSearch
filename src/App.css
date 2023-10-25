@@ -1,3 +1,95 @@
+/* App.css */
+/* App.css */
+body {
+  background: #F4F7F7;
+  color: #333333; /* Primary Font Color */
+}
+
+h1 {
+  color: #000000; /* Secondary Font Color for headings */
+}
+
+.limited-height {
+  max-height: 150px; /* Adjust this value to control the maximum height of the content */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-link {
+  text-decoration: underline; /* Style the "Show More" button as a link with underline */
+  cursor: pointer; /* Use a pointer cursor to indicate it's clickable */
+  color: #05468c;
+}
+
+.expandable-description {
+  /* Add any common styles for the container here */
+}
+
+.label-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  /* Add styles for the label here */
+}
+
+.content {
+  /* Add styles for the content here */
+}
+
+.labeltext {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.infobox {
+  background: #fff; 
+  /* Secondary Background Color */
+  border: 1px solid #ccc; /* Border Color */
+  /* Additional styling for your Infobox */
+  margin-bottom: 50px;
+}
+
+.primarygreen {
+  background: #24305e; /* Accent Color 1 for buttons */
+  color: #FFFFFF; /* White text for buttons */
+  /* Additional styling for your buttons */
+}
+
+.searchbtn {
+  background: #3e509a !important; /* Accent Color 1 for buttons */
+  color: #FFFFFF !important; /* White text for buttons */
+  /* Additional styling for your buttons */
+}
+
+.searchbtn:hover {
+  background-color: #24305e !important; /* Change 'darkergreen' to your desired color */
+  border-color: #B1D6B4 !important; /* Change 'darkergreen' to your desired color */
+  color: white; /* Change the text color to white or another appropriate color */
+}
+
+.dropdownicon
+{
+  color:#000 !important;
+}
+
+.customnavbar {
+  background-color: #2B6B4F !important;
+  color: white !important;
+}
+
+.alert {
+  background: #EF5252; /* Accent Color 2 for alerts */
+  color: #FFFFFF; /* White text for alerts */
+  /* Additional styling for your alerts */
+}
+
+a {
+  color: #05468c; /* Highlight Color for links */
+}
 .App {
   text-align: center;
 }
