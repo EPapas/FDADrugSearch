@@ -4,7 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
 
-function Home() {
+function DrugInfo() {
     const [drugData, setDrugData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
@@ -16,7 +16,7 @@ function Home() {
   
       const api_key = 'eZX8zQSGakyHseSI5stbAIcFqnrTdhFWPgpFeTCM';
       //const apiUrl = `https://api.fda.gov/drug/label.json?search=${searchQuery}&api_key=${api_key}`;
-      const apiUrl = `https://api.fda.gov/drug/label.json?search=drug_interactions:${searchQuery}&limit=50&api_key=${api_key}`;
+      const apiUrl = `https://api.fda.gov/drug/label.json?search=openfda.brand_name:${searchQuery}&limit=50&api_key=${api_key}`;
   
       fetch(apiUrl)
       .then(response => {
@@ -47,8 +47,8 @@ function Home() {
           <Navbar />
           
           <div className="container col-md-6">
-            <h3 className="display-6 pt-3 pb-3">Drug Interactions</h3>
-            <p className="pt-1 pb-1">Search for a drug (ex: caffeine, alcohol) and the search results will show different drugs that interact with it</p>
+            <h3 className="display-6 pt-3 pb-3">Drug Info</h3>
+            <p className="pt-1 pb-1">Search for a drug, and view information about the searched item.</p>
             <div className="input-group mb-3 pt-4 pb-4">
               <input
                 type="text"
@@ -76,19 +76,18 @@ function Home() {
   </div>
             ) : drugData ? (
                 drugData.results
-            .filter((item) => item.openfda && item.openfda.brand_name) // Filter out items without openfda or brand_name
-            .reduce((uniqueResults, item) => {
-              const brandName = item.openfda.brand_name[0].toLowerCase(); // Convert to lowercase
-              if (!uniqueResults.brands.has(brandName)) {
-                uniqueResults.brands.add(brandName);
-                uniqueResults.items.push(item);
-              }
-              return uniqueResults;
-            }, { brands: new Set(), items: [] })
-            .items.map((item, index) => <Infobox data={item} key={index} />) // Include only the unique items
-        ) : null}
+    .filter((item) => item.openfda && item.openfda.brand_name) // Filter out items without openfda or brand_name
+    .reduce((uniqueResults, item) => {
+      if (!uniqueResults.brands.has(item.openfda.brand_name[0])) {
+        uniqueResults.brands.add(item.openfda.brand_name[0]);
+        uniqueResults.items.push(item);
+      }
+      return uniqueResults;
+    }, { brands: new Set(), items: [] })
+    .items.map((item, index) => <Infobox data={item} key={index} />) // Include only the unique items
+) : null}
           </div>
         </div>
       );
     }
-export default Home;
+export default DrugInfo;

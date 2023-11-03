@@ -10,7 +10,9 @@ function Infobox({ data }) {
   return (
     <div className="border rounded md-col-6 infobox">
       <div className="primarygreen p-3 rounded-top text-center">
-      <p className="mb-0 custom-larger-text labeltext">{openfda.brand_name}</p>
+      <p className="mb-0 custom-larger-text labeltext">
+      {String(openfda.brand_name).toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+      </p>
       </div>
       {data.dosage_and_administration !== null && String(data.dosage_and_administration) !== "undefined" && (
   <div className="p-3">
@@ -69,6 +71,12 @@ function Infobox({ data }) {
 {data.warnings_and_cautions !== null && String(data.warnings_and_cautions) !== "undefined" && (
   <div className="border-top p-3">
     <Expander content={String(data.warnings_and_cautions)} label={'Warnings and Cautions'} maxLength={200} />
+  </div>
+)}
+
+{data.adverse_reactions !== null && String(data.adverse_reactions) !== "undefined" && (
+  <div className="border-top p-3">
+    <Expander content={String(data.adverse_reactions)} label={'Adverse Reactions'} maxLength={200} />
   </div>
 )}
 

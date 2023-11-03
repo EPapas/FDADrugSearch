@@ -24,7 +24,7 @@ function Expander({ content, label, maxLength = 200 }) {
 
   return (
     <div className="expandable-description container">
-      <div className="label-container row">
+      <div className="label-container row cursor-pointer">
         <div className="label col-sm-8 cursor-pointer labeltext" onClick={toggleExpand}>{label}</div>
         <button className="btn btn-link col-sm-4 dropdownicon" onClick={toggleExpand}>
           <FontAwesomeIcon icon={expanded ? faAngleDown : faAngleRight} />

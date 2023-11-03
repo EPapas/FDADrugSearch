@@ -23,11 +23,14 @@ function Navbar() {
               <Link to="/" className="nav-link">Drug Interactions</Link>
             </li>
             <li className="nav-item">
+              <Link to="/druginfo" className="nav-link">Drug Info</Link>
+            </li>
+            <li className="nav-item">
               <Link to="/about" className="nav-link">About</Link>
             </li>
             <li className="nav-item">
-              <Link to="/contact" className="nav-link">Contact</Link>
-            </li>
+              <Link to="/recall" className="nav-link">Recall</Link>
+            </li>           
           </ul>
         </div>
       </div>

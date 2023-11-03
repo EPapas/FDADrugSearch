@@ -22,6 +22,10 @@ h1 {
   color: #05468c;
 }
 
+.cursor-pointer {
+  cursor:pointer;
+}
+
 .expandable-description {
   /* Add any common styles for the container here */
 }
@@ -59,6 +63,17 @@ h1 {
   /* Additional styling for your buttons */
 }
 
+.primaryblue {
+  background: #1764c2; /* Accent Color 1 for buttons */
+  color: #FFFFFF; /* White text for buttons */
+  /* Additional styling for your buttons */
+}
+.primaryorange {
+  background: #f5790c; /* Accent Color 1 for buttons */
+  color: #FFFFFF; /* White text for buttons */
+  /* Additional styling for your buttons */
+}
+
 .searchbtn {
   background: #3e509a !important; /* Accent Color 1 for buttons */
   color: #FFFFFF !important; /* White text for buttons */
@@ -79,6 +94,11 @@ h1 {
 .customnavbar {
   background-color: #2B6B4F !important;
   color: white !important;
+}
+
+.padding
+{
+  padding: 10px 10px 0px 0px;
 }
 
 .alert {
