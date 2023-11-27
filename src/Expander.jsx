@@ -24,18 +24,20 @@ function Expander({ content, label, maxLength = 200 }) {
 
   return (
     <div className="expandable-description container">
-      <div className="label-container row cursor-pointer">
-        <div className="label col-sm-8 cursor-pointer labeltext" onClick={toggleExpand}>{label}</div>
-        <button className="btn btn-link col-sm-4 dropdownicon" onClick={toggleExpand}>
+    <div className="label-container row cursor-pointer align-items-center">
+      <div className="col-8 labeltext cursor-pointer" onClick={toggleExpand}>{label}</div>
+      <div className="col-4 text-right">
+        <button className="btn" onClick={toggleExpand}>
           <FontAwesomeIcon icon={expanded ? faAngleDown : faAngleRight} />
         </button>
       </div>
-      {expanded && (
-        <div className="content">
-          {content}
-        </div>
-      )}
     </div>
+    {expanded && (
+      <div className="content">
+        {content}
+      </div>
+    )}
+  </div>
   );
 }
 export default Expander;

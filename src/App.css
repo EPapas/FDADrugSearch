@@ -2,11 +2,11 @@
 /* App.css */
 body {
   background: #F4F7F7;
-  color: #333333; /* Primary Font Color */
+  color: #333333 !important; /* Primary Font Color */
 }
 
 h1 {
-  color: #000000; /* Secondary Font Color for headings */
+  color: #333 !important; /* Secondary Font Color for headings */
 }
 
 .limited-height {
@@ -58,37 +58,37 @@ h1 {
 }
 
 .primarygreen {
-  background: #24305e; /* Accent Color 1 for buttons */
-  color: #FFFFFF; /* White text for buttons */
+  background: #FFD700; /* Accent Color 1 for buttons */
+  color: #333; /* White text for buttons */
   /* Additional styling for your buttons */
 }
 
 .primaryblue {
-  background: #1764c2; /* Accent Color 1 for buttons */
-  color: #FFFFFF; /* White text for buttons */
+  background: #5A9CCC; /* Accent Color 1 for buttons */
+  color: #fff; /* White text for buttons */
   /* Additional styling for your buttons */
 }
 .primaryorange {
-  background: #f5790c; /* Accent Color 1 for buttons */
+  background: #FF8C42; /* Accent Color 1 for buttons */
   color: #FFFFFF; /* White text for buttons */
   /* Additional styling for your buttons */
 }
 
 .searchbtn {
-  background: #3e509a !important; /* Accent Color 1 for buttons */
-  color: #FFFFFF !important; /* White text for buttons */
+  background: #212529!important; /* Accent Color 1 for buttons */
+  color: #fff !important; /* White text for buttons */
   /* Additional styling for your buttons */
 }
 
 .searchbtn:hover {
-  background-color: #24305e !important; /* Change 'darkergreen' to your desired color */
-  border-color: #B1D6B4 !important; /* Change 'darkergreen' to your desired color */
-  color: white; /* Change the text color to white or another appropriate color */
+  background-color: #000 !important; /* Change 'darkergreen' to your desired color */
+  border-color: #000!important; /* Change 'darkergreen' to your desired color */
+  color: #FFF !important; /* Change the text color to white or another appropriate color */
 }
 
 .dropdownicon
 {
-  color:#000 !important;
+  color:#333 !important;
 }
 
 .customnavbar {
@@ -100,6 +100,15 @@ h1 {
 {
   padding: 10px 10px 0px 0px;
 }
+
+.background {
+  background: #F7F7F7;
+}
+
+html {
+  background: #F7F7F7;
+}
+
 
 .alert {
   background: #EF5252; /* Accent Color 2 for alerts */

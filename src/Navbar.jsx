@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <Link to="/" className="navbar-brand">FDA Drug Search</Link>
+        <Link to="/" className="navbar-brand">FDA Recall Search</Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -20,17 +20,17 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link to="/" className="nav-link">Drug Interactions</Link>
+              <Link to="/druginteractions" className="nav-link">Drug Interactions</Link>
             </li>
             <li className="nav-item">
               <Link to="/druginfo" className="nav-link">Drug Info</Link>
             </li>
             <li className="nav-item">
-              <Link to="/about" className="nav-link">About</Link>
-            </li>
+              <Link to="/" className="nav-link">Recall</Link>
+            </li> 
             <li className="nav-item">
-              <Link to="/recall" className="nav-link">Recall</Link>
-            </li>           
+              <Link to="/about" className="nav-link">About</Link>
+            </li>          
           </ul>
         </div>
       </div>

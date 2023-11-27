@@ -2,6 +2,22 @@ import React from 'react';
 import './App.css';
 import Expander from './Expander';
 
+function formatDateFromApi(dateString) {
+  // Check if the input date string is valid
+  if (dateString && dateString.length === 8) {
+    // Extract year, month, and day components
+    const year = dateString.slice(0, 4);
+    const month = dateString.slice(4, 6);
+    const day = dateString.slice(6, 8);
+
+    // Format the date as "mm/dd/yyyy"
+    return `${month}/${day}/${year}`;
+  } else {
+    // Handle invalid date string or return the original value
+    return dateString;
+  }
+}
+
 function RecallInfobox({ data }) {
   return (
     <div className="border rounded md-col-6 infobox">
@@ -13,8 +29,33 @@ function RecallInfobox({ data }) {
   </p>
 </div>
 
+{data.openfda.brand_name && (
+        <div className=" p-3">
+          <Expander content={data.openfda.brand_name} label={'Brand Name'} maxLength={200} />
+        </div>
+      )}
+
+{data.openfda.generic_name && (
+        <div className="border-top p-3">
+          <Expander content={data.openfda.generic_name} label={'Generic Name'} maxLength={200} />
+        </div>
+      )}
+
+{data.openfda.manufacturer_name && (
+        <div className="border-top p-3">
+          <Expander content={data.openfda.manufacturer_name} label={'Manufacturer Name'} maxLength={200} />
+        </div>
+      )}
+
+            {/* Add rows for the new responses if they don't already exist */}
+            {data.status && (
+        <div className="border-top p-3">
+          <Expander content={data.product_description} label={'Description'} maxLength={200} />
+        </div>
+      )}
+
       {data.reason_for_recall && (
-        <div className="p-3">
+        <div className=" border-top p-3">
           <Expander content={data.reason_for_recall} label={'Reason for Recall'} maxLength={200} />
         </div>
       )}
@@ -27,20 +68,13 @@ function RecallInfobox({ data }) {
 
       {data.recall_initiation_date && (
         <div className="border-top p-3">
-          <Expander content={data.recall_initiation_date} label={'Recall Initiation Date'} maxLength={200} />
+          <Expander content={formatDateFromApi(data.recall_initiation_date)} label={'Recall Initiation Date'} maxLength={200} />
         </div>
      ) }
 
       {data.termination_date && (
         <div className="border-top p-3">
-          <Expander content={data.termination_date} label={'Termination Date'} maxLength={200} />
-        </div>
-      )}
-
-      {/* Add rows for the new responses if they don't already exist */}
-      {data.status && (
-        <div className="border-top p-3">
-          <Expander content={data.product_description} label={'Description'} maxLength={200} />
+          <Expander content={formatDateFromApi(data.termination_date)} label={'Termination Date'} maxLength={200} />
         </div>
       )}
 
